@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BReeZ Cycle Worx — Building Stronger Communities Through Trails, Recreation &amp; Cycling</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1E6;
+    --cream-dark:#EDE6D6;
+    --forest:#1E3A2C;
+    --forest-deep:#152820;
+    --sage:#4F6B4A;
+    --rust:#BD5F2C;
+    --steel:#4E6670;
+    --ink:#22291F;
+    --gray:#5C6459;
+    --white:#FFFFFF;
+    --font-serif:'Playfair Display',serif;
+    --font-body:'Inter',sans-serif;
+    --max-w:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+  .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 32px}
+
+  .eyebrow{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+  .h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,3.4vw,38px);color:var(--forest);line-height:1.2;margin-bottom:14px}
+  .lede{color:var(--gray);font-size:15.5px;max-width:600px;line-height:1.7}
+  .learn-more{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
+  .learn-more:hover{color:var(--rust)}
+
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;border-radius:2px}
+  .btn-solid{background:var(--forest);color:var(--white);border:1px solid var(--forest)} .btn-solid:hover{background:var(--forest-deep)}
+  .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink)} .btn-outline:hover{background:var(--ink);color:var(--white)}
+  .btn-outline-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.7)} .btn-outline-light:hover{background:rgba(255,255,255,0.15)}
+
+  /* NAV */
+  nav{background:var(--cream);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{font-size:26px;line-height:1}
+  .logo-text{font-family:var(--font-serif);font-weight:700;font-size:19px;color:var(--forest);letter-spacing:0.01em;line-height:1.1}
+  .logo-text small{display:block;font-family:var(--font-body);font-weight:600;font-size:10px;letter-spacing:0.18em;color:var(--gray)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink)}
+  .nav-links a:hover{color:var(--rust)}
+  .nav-toggle{display:none}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .nav-hamburger span{width:24px;height:2px;background:var(--forest)}
+
+  /* HERO */
+  .hero{position:relative;min-height:560px;display:flex;align-items:center;overflow:hidden}
+  .hero-bg{position:absolute;inset:0;background:linear-gradient(100deg, rgba(20,30,20,0.72) 0%, rgba(20,30,20,0.35) 45%, rgba(20,30,20,0.05) 70%), url('images/hero-trail.jpg') center/cover, var(--sage);background-blend-mode:normal}
+  .hero-inner{position:relative;z-index:1;padding:80px 0}
+  .hero-content{max-width:560px}
+  .hero h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(32px,4.6vw,46px);color:var(--white);line-height:1.15;margin-bottom:6px}
+  .hero h1 em{font-style:italic;font-weight:600;color:#A9C99A;display:block}
+  .hero p{color:rgba(255,255,255,0.88);font-size:15px;line-height:1.7;max-width:460px;margin:20px 0 32px}
+  .hero-btns{display:flex;gap:14px;flex-wrap:wrap}
+
+  /* FEATURE ROW — 3 columns */
+  .features{background:var(--cream-dark);padding:56px 0}
+  .feature-grid{display:grid;grid-template-columns:repeat(3,1fr)}
+  .feature-col{padding:0 36px;text-align:center;border-right:1px solid rgba(0,0,0,0.08)}
+  .feature-col:last-child{border-right:none}
+  .feature-icon{width:56px;height:56px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 18px;font-size:24px;color:white}
+  .feature-icon.green{background:var(--forest)}
+  .feature-icon.blue{background:var(--steel)}
+  .feature-icon.rust{background:var(--rust)}
+  .feature-title{font-family:var(--font-serif);font-weight:700;font-size:20px;color:var(--forest);margin-bottom:10px;line-height:1.25}
+  .feature-body{font-size:14px;color:var(--gray);line-height:1.6;max-width:280px;margin:0 auto}
+
+  /* EXPERTISE BAND — dark, split image/content */
+  .expertise{background:var(--forest);color:white;display:grid;grid-template-columns:1fr 1.15fr}
+  .expertise-img{background:var(--forest-deep) url('images/team-map-review.jpg') center/cover;min-height:420px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.3);font-family:var(--font-body);font-size:12px;letter-spacing:0.1em;text-transform:uppercase;flex-direction:column;gap:10px}
+  .expertise-img-icon{font-size:36px;opacity:0.5}
+  .expertise-content{padding:64px 56px}
+  .expertise .eyebrow{color:var(--rust)}
+  .expertise h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3vw,32px);color:white;line-height:1.25;margin-bottom:16px}
+  .expertise p{color:rgba(255,255,255,0.7);font-size:14.5px;line-height:1.7;max-width:520px;margin-bottom:36px}
+  .expertise-icons{display:flex;gap:32px;flex-wrap:wrap}
+  .exp-icon-item{text-align:center;width:90px}
+  .exp-icon{font-size:24px;margin-bottom:8px;opacity:0.9}
+  .exp-icon-label{font-size:11.5px;color:rgba(255,255,255,0.75);line-height:1.35}
+
+  /* PROCESS + IMPACT */
+  .process-section{background:var(--cream);padding:64px 0}
+  .process-impact-grid{display:grid;grid-template-columns:1.5fr 1fr;gap:60px}
+  .process-label{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-bottom:28px}
+  .process-row{display:flex;align-items:flex-start;gap:8px}
+  .process-step{text-align:center;flex:1}
+  .process-icon{width:50px;height:50px;border-radius:50%;border:1.5px solid var(--forest);display:flex;align-items:center;justify-content:center;margin:0 auto 10px;font-size:20px;color:var(--forest)}
+  .process-num{font-family:var(--font-body);font-weight:700;font-size:11px;letter-spacing:0.08em;color:var(--rust);margin-bottom:4px}
+  .process-title{font-family:var(--font-body);font-weight:700;font-size:12px;letter-spacing:0.04em;color:var(--forest);margin-bottom:6px}
+  .process-desc{font-size:11.5px;color:var(--gray);line-height:1.5;max-width:100px;margin:0 auto}
+  .process-arrow{color:var(--rust);font-size:18px;padding-top:18px}
+
+  .impact-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px 16px}
+  .impact-num{font-family:var(--font-serif);font-weight:700;font-size:30px;color:var(--forest);line-height:1}
+  .impact-label{font-size:12px;color:var(--gray);margin-top:5px;line-height:1.3}
+
+  /* FEATURED PROJECTS */
+  .projects{background:var(--cream-dark);padding:64px 0}
+  .projects-label{text-align:center;font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-bottom:36px}
+  .project-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:28px}
+  .project-card{background:var(--white);border-radius:4px;overflow:hidden;box-shadow:0 1px 3px rgba(0,0,0,0.06)}
+  .project-img{aspect-ratio:4/3;background:var(--sage);position:relative;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.6);font-size:30px}
+  .project-badge{position:absolute;bottom:-18px;left:20px;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;box-shadow:0 2px 6px rgba(0,0,0,0.2)}
+  .project-body{padding:32px 20px 22px}
+  .project-title{font-family:var(--font-serif);font-weight:700;font-size:18px;color:var(--forest);margin-bottom:8px;line-height:1.25}
+  .project-desc{font-size:13.5px;color:var(--gray);line-height:1.55}
+
+  /* WE WORK WITH */
+  .work-with{background:var(--cream);padding:56px 0}
+  .work-with-label{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--forest);margin-bottom:32px}
+  .work-grid{display:grid;grid-template-columns:repeat(8,1fr);gap:16px;text-align:center}
+  .work-icon{font-size:26px;color:var(--forest);margin-bottom:10px}
+  .work-label{font-size:11.5px;color:var(--gray);line-height:1.3;font-weight:500}
+
+  /* CTA */
+  .cta{position:relative;padding:80px 0;overflow:hidden;background:var(--cream-dark)}
+  .cta-bg{position:absolute;inset:0;background:linear-gradient(180deg, rgba(30,58,44,0.55), rgba(20,30,25,0.7)), url('images/cta-mountains.jpg') center/cover}
+  .cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
+  .cta h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.2vw,34px);color:var(--forest);line-height:1.2;margin-bottom:12px}
+  .cta p{font-size:14.5px;color:var(--ink);max-width:460px;line-height:1.65}
+  .cta-btns{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+
+  /* FOOTER */
+  footer{background:var(--forest-deep);color:rgba(255,255,255,0.6);padding:56px 0 28px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .footer-logo-text{font-family:var(--font-serif);font-weight:700;font-size:18px;color:white;line-height:1.1}
+  .footer-logo-text small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.5)}
+  .footer-tagline{font-size:13px;line-height:1.6;max-width:280px}
+  .footer-col h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.65)} .footer-col ul li a:hover{color:var(--rust)}
+  .footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.65)}
+  .footer-social{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-top:8px;font-size:13px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.35);text-align:center}
+
+  /* RESPONSIVE */
+  @media(max-width:980px){
+    .expertise{grid-template-columns:1fr}
+    .expertise-img{min-height:260px}
+    .process-impact-grid{grid-template-columns:1fr;gap:40px}
+    .impact-grid{grid-template-columns:repeat(3,1fr)}
+    .work-grid{grid-template-columns:repeat(4,1fr);row-gap:28px}
+    .cta-inner{grid-template-columns:1fr;text-align:center}
+    .cta-btns{align-items:center}
+    .cta p{margin:0 auto}
+  }
+  @media(max-width:860px){
+    .feature-grid{grid-template-columns:1fr;gap:32px}
+    .feature-col{border-right:none;border-bottom:1px solid rgba(0,0,0,0.08);padding-bottom:32px}
+    .feature-col:last-child{border-bottom:none;padding-bottom:0}
+    .project-grid{grid-template-columns:1fr}
+    .footer-grid{grid-template-columns:1fr;gap:32px}
+    .process-row{flex-wrap:wrap;gap:16px 4px}
+    .process-arrow{display:none}
+  }
+  @media(max-width:768px){
+    .nav-hamburger{display:flex}
+    .nav-links{display:none}
+    .hero{min-height:480px}
+    .hero-content{max-width:100%}
+  }
+  @media(max-width:600px){
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+    .expertise-content{padding:44px 24px}
+    .expertise-icons{gap:20px;justify-content:center}
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" style="text-decoration:none">
+      <span class="logo-mark">🏔️</span>
+      <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community-development.html">Community Development</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg"></div>
+  <!-- IMAGE NEEDED: images/hero-trail.jpg (boardwalk/trail photo, 1920x1080 or larger, landscape) -->
+  <!-- Until the file is added, this shows a plain green background — safe fallback, nothing looks broken -->
+  <div class="container hero-inner">
+    <div class="hero-content">
+      <h1>Building Stronger Communities<br><em>Through Trails, Recreation &amp; Cycling</em></h1>
+      <p>BReeZ Cycle Worx partners with communities, parks, organizations, and outdoor enthusiasts to create meaningful recreation experiences through thoughtful planning, sustainable trail development, and professional bicycle services.</p>
+      <div class="hero-btns">
+        <a href="community-development.html" class="btn btn-solid">Explore Our Services</a>
+        <a href="contact.html" class="btn btn-outline-light">Start a Conversation</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURE ROW -->
+<section class="features">
+  <div class="container feature-grid">
+    <div class="feature-col">
+      <div class="feature-icon green">👥</div>
+      <div class="feature-title">Community<br>Development</div>
+      <p class="feature-body">Helping communities create outdoor recreation strategies that support tourism, public health, and long-term growth.</p>
+      <a href="community-development.html" class="learn-more">Learn More →</a>
+    </div>
+    <div class="feature-col">
+      <div class="feature-icon blue">⛰️</div>
+      <div class="feature-title">Trail Planning &amp;<br>Development</div>
+      <p class="feature-body">Planning, designing, improving, and maintaining sustainable trail systems built for generations.</p>
+      <a href="#trail-services" class="learn-more">Learn More →</a>
+    </div>
+    <div class="feature-col">
+      <div class="feature-icon rust">🚲</div>
+      <div class="feature-title">Bicycle<br>Services</div>
+      <p class="feature-body">Professional bicycle repair, custom wheel building, maintenance, and rider support that keeps our communities moving.</p>
+      <a href="#bike-services" class="learn-more">Learn More →</a>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE BAND -->
+<section class="expertise" id="about">
+  <div class="expertise-img">
+    <div class="expertise-img-icon">🗺️</div>
+    <span></span>
+  </div>
+  <div class="expertise-content">
+    <p class="eyebrow">Experience Beyond the Trail</p>
+    <h2>Bringing Professional Expertise to Every Project</h2>
+    <p>Our team combines experience in business leadership, engineering, project management, community engagement, and recreation planning with a lifelong passion for cycling and the outdoors.</p>
+    <div class="expertise-icons">
+      <div class="exp-icon-item"><div class="exp-icon">💼</div><div class="exp-icon-label">Business<br>Leadership</div></div>
+      <div class="exp-icon-item"><div class="exp-icon">📐</div><div class="exp-icon-label">Engineering &amp;<br>Design</div></div>
+      <div class="exp-icon-item"><div class="exp-icon">📋</div><div class="exp-icon-label">Project<br>Management</div></div>
+      <div class="exp-icon-item"><div class="exp-icon">🤝</div><div class="exp-icon-label">Community<br>Engagement</div></div>
+      <div class="exp-icon-item"><div class="exp-icon">🏞️</div><div class="exp-icon-label">Recreation<br>Advocacy</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS + IMPACT -->
+<section class="process-section">
+  <div class="container process-impact-grid">
+    <div>
+      <p class="process-label">Our Process</p>
+      <div class="process-row">
+        <div class="process-step">
+          <div class="process-icon">👂</div>
+          <div class="process-num">1.</div>
+          <div class="process-title">LISTEN</div>
+          <p class="process-desc">Understanding community goals and opportunities.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">🔍</div>
+          <div class="process-num">2.</div>
+          <div class="process-title">ASSESS</div>
+          <p class="process-desc">Evaluating existing conditions and identifying possibilities.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">📋</div>
+          <div class="process-num">3.</div>
+          <div class="process-title">PLAN</div>
+          <p class="process-desc">Developing practical, sustainable solutions.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">🤝</div>
+          <div class="process-num">4.</div>
+          <div class="process-title">PARTNER</div>
+          <p class="process-desc">Building partnerships with communities, organizations, and volunteers.</p>
+        </div>
+        <div class="process-arrow">→</div>
+        <div class="process-step">
+          <div class="process-icon">🌳</div>
+          <div class="process-num">5.</div>
+          <div class="process-title">SUPPORT</div>
+          <p class="process-desc">Supporting projects for long-term success and stewardship.</p>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <p class="process-label">Our Impact</p>
+      <div class="impact-grid">
+        <div><div class="impact-num">5+</div><div class="impact-label">Communities Served</div></div>
+        <div><div class="impact-num">25+</div><div class="impact-label">Trail Projects Supported</div></div>
+        <div><div class="impact-num">1,000+</div><div class="impact-label">Volunteer Hours Contributed</div></div>
+        <div><div class="impact-num">2,500+</div><div class="impact-label">Riders Assisted</div></div>
+        <div><div class="impact-num">65+</div><div class="impact-label">Miles of Trail Impacted</div></div>
+        <div><div class="impact-num">50+</div><div class="impact-label">Community Partnerships</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FEATURED PROJECTS -->
+<section class="projects" id="projects">
+  <div class="container">
+    <p class="projects-label">Featured Projects</p>
+    <div class="project-grid">
+
+      <div class="project-card">
+        <div class="project-img" style="background-image:url('images/project-henderson.jpg');background-size:cover;background-position:center">
+          
+          <div class="project-badge" style="background:var(--forest)">🗺️</div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Henderson Park Master Plan</div>
+          <p class="project-desc">Creating a long-term vision for outdoor recreation that benefits the entire community.</p>
+          <a href="projects.html" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img" style="background-image:url('images/project-madisonville.jpg');background-size:cover;background-position:center">
+          
+          <div class="project-badge" style="background:var(--steel)">🍃</div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Madisonville Trail Initiative</div>
+          <p class="project-desc">Strengthening connections through active transportation and sustainable trail development.</p>
+          <a href="projects.html" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="project-img" style="background-image:url('images/project-hopkins-cycling.jpg');background-size:cover;background-position:center">
+          
+          <div class="project-badge" style="background:var(--rust)">🚲</div>
+        </div>
+        <div class="project-body">
+          <div class="project-title">Hopkins County Cycling</div>
+          <p class="project-desc">Supporting riders through education, maintenance, and community events.</p>
+          <a href="projects.html" class="learn-more">Learn More →</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- WE WORK WITH -->
+<section class="work-with">
+  <div class="container">
+    <p class="work-with-label">We Work With</p>
+    <div class="work-grid">
+      <div><div class="work-icon">🏘️</div><div class="work-label">Communities</div></div>
+      <div><div class="work-icon">🌳</div><div class="work-label">Parks &amp; Recreation Departments</div></div>
+      <div><div class="work-icon">🧭</div><div class="work-label">Tourism Organizations</div></div>
+      <div><div class="work-icon">🚵</div><div class="work-label">Trail Advocacy Groups</div></div>
+      <div><div class="work-icon">🏢</div><div class="work-label">Businesses</div></div>
+      <div><div class="work-icon">🎓</div><div class="work-label">Schools &amp; Universities</div></div>
+      <div><div class="work-icon">🚲</div><div class="work-label">Cyclists</div></div>
+      <div><div class="work-icon">🤍</div><div class="work-label">Volunteers</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="cta-bg"></div>
+  <!-- IMAGE NEEDED: images/cta-mountains.jpg (landscape/mountain view, 1920px wide) -->
+  <div class="container cta-inner">
+    <div>
+      <h2>Let's Build Something Meaningful Together.</h2>
+      <p>Whether you're planning a new trail system, improving an existing park, supporting local cycling, or exploring new recreation opportunities, we'd love to help bring your vision to life.</p>
+    </div>
+    <div class="cta-btns">
+      <a href="contact.html" class="btn btn-solid">Schedule a Consultation</a>
+      <a href="contact.html" class="btn btn-outline">Contact Our Team</a>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark">🏔️</span>
+          <div class="footer-logo-text">BReeZ<small>CYCLE WORX</small></div>
+        </div>
+        <p class="footer-tagline">Building healthier communities through recreation, collaboration, and sustainable outdoor experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="community-development.html">Community Development</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-contact-item">📞 <a href="tel:2708700587">(270) 870-0587</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
+        <div class="footer-contact-item">📍 Madisonville, Kentucky</div>
+        <div class="footer-social">f</div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 BReeZ Cycle Worx. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

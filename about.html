@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>About — BReeZ Cycle Worx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1E6;
+    --cream-dark:#EDE6D6;
+    --forest:#1E3A2C;
+    --forest-deep:#152820;
+    --sage:#4F6B4A;
+    --rust:#BD5F2C;
+    --steel:#4E6670;
+    --ink:#22291F;
+    --gray:#5C6459;
+    --white:#FFFFFF;
+    --font-serif:'Playfair Display',serif;
+    --font-body:'Inter',sans-serif;
+    --max-w:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+  .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 32px}
+  .eyebrow{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+  .h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,3.4vw,38px);color:var(--forest);line-height:1.2;margin-bottom:14px}
+  .lede{color:var(--gray);font-size:15.5px;max-width:620px;line-height:1.7}
+  .learn-more{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
+  .learn-more:hover{color:var(--rust)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;border-radius:2px}
+  .btn-solid{background:var(--forest);color:var(--white);border:1px solid var(--forest)} .btn-solid:hover{background:var(--forest-deep)}
+  .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink)} .btn-outline:hover{background:var(--ink);color:var(--white)}
+  .btn-outline-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.7)} .btn-outline-light:hover{background:rgba(255,255,255,0.15)}
+  nav{background:var(--cream);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{font-size:26px;line-height:1}
+  .logo-text{font-family:var(--font-serif);font-weight:700;font-size:19px;color:var(--forest);letter-spacing:0.01em;line-height:1.1}
+  .logo-text small{display:block;font-family:var(--font-body);font-weight:600;font-size:10px;letter-spacing:0.18em;color:var(--gray)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink)}
+  .nav-links a:hover,.nav-links a.active{color:var(--rust)}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .nav-hamburger span{width:24px;height:2px;background:var(--forest)}
+  .page-hero{position:relative;padding:76px 0 60px;background:var(--forest);overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(189,95,44,0.15),transparent 70%)}
+  .page-hero-inner{position:relative;max-width:680px}
+  .page-hero .eyebrow{color:var(--rust)}
+  .page-hero h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(32px,4.2vw,46px);color:white;line-height:1.18;margin-bottom:18px}
+  .page-hero p{color:rgba(255,255,255,0.75);font-size:15.5px;line-height:1.7;max-width:600px;margin-bottom:28px}
+  footer{background:var(--forest-deep);color:rgba(255,255,255,0.6);padding:56px 0 28px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .footer-logo-text{font-family:var(--font-serif);font-weight:700;font-size:18px;color:white;line-height:1.1}
+  .footer-logo-text small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.5)}
+  .footer-tagline{font-size:13px;line-height:1.6;max-width:280px}
+  .footer-col h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.65)} .footer-col ul li a:hover{color:var(--rust)}
+  .footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.65)}
+  .footer-social{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-top:8px;font-size:13px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.35);text-align:center}
+  @media(max-width:768px){.nav-hamburger{display:flex}.nav-links{display:none}}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:32px}}
+
+  .intro{padding:64px 0;background:var(--cream)}
+  .intro-inner{max-width:760px}
+
+  .stats-band{background:var(--cream-dark);padding:44px 0}
+  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
+  .stat-num{font-family:var(--font-serif);font-weight:700;font-size:28px;color:var(--forest)}
+  .stat-label{font-size:12.5px;color:var(--gray);margin-top:4px;line-height:1.35}
+
+  .team-section{padding:64px 0;background:var(--cream)}
+  .team-header{max-width:600px;margin-bottom:44px}
+  .team-list{display:flex;flex-direction:column;gap:20px}
+  .team-card{background:var(--white);border-radius:4px;padding:36px;display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:start}
+  .team-photo{background:var(--cream-dark);border-radius:50%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:40px}
+  .team-name{font-family:var(--font-serif);font-weight:700;font-size:24px;color:var(--forest);margin-bottom:4px}
+  .team-title{font-family:var(--font-body);font-size:12.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+  .team-bio{font-size:14.5px;color:var(--gray);line-height:1.7}
+
+  .why-section{padding:64px 0;background:var(--forest);color:white}
+  .why-section .eyebrow{color:var(--rust)}
+  .why-section h2{color:white}
+.why-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px 40px;max-width:700px;margin:0 auto}  .why-item{display:flex;align-items:center;gap:12px;font-size:15px;font-weight:500}
+  .why-check{color:var(--rust);font-size:18px;font-weight:700}
+
+  .cta-band{padding:72px 0;background:var(--cream-dark);text-align:center}
+  .cta-band h2{max-width:600px;margin:0 auto 14px}
+  .cta-band p{margin:0 auto 28px}
+
+  @media(max-width:900px){
+    .stats-grid{grid-template-columns:1fr 1fr}
+    .team-card{grid-template-columns:1fr}
+    .team-photo{width:120px;margin:0 auto}
+    .why-grid{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">🏔️</span>
+      <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community-development.html">Community Development</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="about.html" class="active">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <p class="eyebrow">About Us</p>
+    <h1>More Than Riders. We're Professionals.</h1>
+    <p>We understand that successful trail systems aren't built with passion alone. They're built through planning, stakeholder engagement, business strategy, community support, and long-term sustainability.</p>
+  </div>
+</section>
+
+<section class="intro">
+  <div class="container intro-inner">
+    <p class="eyebrow">Our Story</p>
+    <h2 class="h2">We're Riders First. Professionals Always.</h2>
+    <p class="lede">BReeZ Cycle Worx began because we love riding bikes. Like many people, we started by spending weekends exploring trails throughout Western Kentucky. The more we rode, the more we realized something — great trail systems don't happen by accident.</p>
+    <p class="lede" style="margin-top:14px">Behind every successful trail network is a partnership between riders, community advocates, city leadership, businesses, tourism organizations, and long-term planning. That's where we found our purpose.</p>
+    <p class="lede" style="margin-top:14px">Today, BReeZ brings together professionals with backgrounds in business leadership, community development, engineering, project management, marketing, and trail design. We understand both sides of the conversation — the rider who wants better trails and the city leader responsible for investing public resources wisely. We believe successful trail systems create healthier communities, stronger local economies, and outdoor experiences that last for generations.</p>
+  </div>
+</section>
+
+<section class="stats-band">
+  <div class="container stats-grid">
+    <div><div class="stat-num">20+</div><div class="stat-label">Years of Combined Trail, Recreation &amp; Business Experience</div></div>
+    <div><div class="stat-num">500+</div><div class="stat-label">Volunteer Hours Supporting Local Trails</div></div>
+    <div><div class="stat-num">1,000+</div><div class="stat-label">Miles Ridden &amp; Evaluated Every Year</div></div>
+    <div><div class="stat-num">5+</div><div class="stat-label">Communities Served</div></div>
+  </div>
+</section>
+
+<section class="team-section">
+  <div class="container">
+    <div class="team-header">
+      <p class="eyebrow">Our Team</p>
+      <h2 class="h2">People Who've Actually Built Trails.</h2>
+    </div>
+
+    <div class="team-list">
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('images/team-james.jpg');background-size:cover;background-position:center"></div>
+        <div>
+          <div class="team-name">James Seargent II</div>
+          <div class="team-title">Founder · Business Strategy · Community Development</div>
+          <p class="team-bio">James combines decades of corporate leadership with a lifelong passion for cycling and outdoor recreation. His background spans executive leadership, operations, business development, engineering, and strategic planning for international companies. Today he focuses on helping communities connect recreation with economic development by creating practical plans that city leaders, stakeholders, and trail users can all support.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('images/team-stephanie.jpg');background-size:cover;background-position:center"></div>
+        <div>
+          <div class="team-name">Stephanie Camille</div>
+          <div class="team-title">Community Engagement · Outreach · Recreation</div>
+          <p class="team-bio">Stephanie brings a background in community development and higher education, with graduate-level experience focused on serving people and strengthening communities. She specializes in public engagement, volunteer coordination, and helping connect residents, organizations, and local leaders around outdoor recreation initiatives that improve quality of life.</p>
+        </div>
+      </div>
+
+      <div class="team-card">
+        <div class="team-photo" style="background-image:url('images/team-richard.jpg');background-size:cover;background-position:center"></div>
+        <div>
+          <div class="team-name">Richard Dixon</div>
+          <div class="team-title">Trail Design · Construction · Project Management</div>
+          <p class="team-bio">Richard has spent years designing, building, and maintaining trail systems throughout Western Kentucky. His experience combines technical trail construction knowledge with practical project management and an understanding of how trails perform over time. His ability to turn concepts into sustainable, rideable trail systems brings real-world experience to every project.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<section class="why-section">
+  <div class="container" style="text-align:center">
+    <p class="eyebrow">What Sets Us Apart</p>
+    <h2 class="h2">Why Communities Choose BReeZ</h2>
+    <div class="why-grid">
+      <div class="why-item"><span class="why-check">✔</span> Business-minded approach</div>
+      <div class="why-item"><span class="why-check">✔</span> Professional communication</div>
+      <div class="why-item"><span class="why-check">✔</span> Trail planning expertise</div>
+      <div class="why-item"><span class="why-check">✔</span> Community engagement</div>
+      <div class="why-item"><span class="why-check">✔</span> Stakeholder coordination</div>
+      <div class="why-item"><span class="why-check">✔</span> Economic development mindset</div>
+      <div class="why-item"><span class="why-check">✔</span> Rider-first perspective</div>
+      <div class="why-item"><span class="why-check">✔</span> Practical implementation</div>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band">
+  <div class="container">
+    <h2 class="h2">Ready to Talk About Your Community's Recreation Future?</h2>
+    <p class="lede" style="margin:0 auto 28px">Let's have a real conversation about what's possible.</p>
+    <a href="contact.html" class="btn btn-solid">Get in Touch</a>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark">🏔️</span>
+          <div class="footer-logo-text">BReeZ<small>CYCLE WORX</small></div>
+        </div>
+        <p class="footer-tagline">Building healthier communities through recreation, collaboration, and sustainable outdoor experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="community-development.html">Community Development</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-contact-item">📞 <a href="tel:2708700587">(270) 870-0587</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
+        <div class="footer-contact-item">📍 Madisonville, Kentucky</div>
+        <div class="footer-social">f</div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 BReeZ Cycle Worx. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>

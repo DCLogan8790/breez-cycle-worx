@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Projects — BReeZ Cycle Worx</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#F5F1E6;
+    --cream-dark:#EDE6D6;
+    --forest:#1E3A2C;
+    --forest-deep:#152820;
+    --sage:#4F6B4A;
+    --rust:#BD5F2C;
+    --steel:#4E6670;
+    --ink:#22291F;
+    --gray:#5C6459;
+    --white:#FFFFFF;
+    --font-serif:'Playfair Display',serif;
+    --font-body:'Inter',sans-serif;
+    --max-w:1180px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);color:var(--ink);background:var(--cream);line-height:1.65;font-size:16px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+  .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 32px}
+  .eyebrow{font-family:var(--font-body);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
+  .h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(28px,3.4vw,38px);color:var(--forest);line-height:1.2;margin-bottom:14px}
+  .lede{color:var(--gray);font-size:15.5px;max-width:620px;line-height:1.7}
+  .learn-more{font-family:var(--font-body);font-weight:700;font-size:12.5px;letter-spacing:0.06em;text-transform:uppercase;color:var(--forest);display:inline-flex;align-items:center;gap:6px;margin-top:14px}
+  .learn-more:hover{color:var(--rust)}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:14px 28px;font-family:var(--font-body);font-weight:700;font-size:13px;letter-spacing:0.08em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;border-radius:2px}
+  .btn-solid{background:var(--forest);color:var(--white);border:1px solid var(--forest)} .btn-solid:hover{background:var(--forest-deep)}
+  .btn-outline{background:transparent;color:var(--ink);border:1px solid var(--ink)} .btn-outline:hover{background:var(--ink);color:var(--white)}
+  .btn-outline-light{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,0.7)} .btn-outline-light:hover{background:rgba(255,255,255,0.15)}
+  nav{background:var(--cream);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+  .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{font-size:26px;line-height:1}
+  .logo-text{font-family:var(--font-serif);font-weight:700;font-size:19px;color:var(--forest);letter-spacing:0.01em;line-height:1.1}
+  .logo-text small{display:block;font-family:var(--font-body);font-weight:600;font-size:10px;letter-spacing:0.18em;color:var(--gray)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink)}
+  .nav-links a:hover,.nav-links a.active{color:var(--rust)}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .nav-hamburger span{width:24px;height:2px;background:var(--forest)}
+  .page-hero{position:relative;padding:76px 0 60px;background:var(--forest);overflow:hidden}
+  .page-hero::before{content:'';position:absolute;top:-60px;right:-60px;width:340px;height:340px;border-radius:50%;background:radial-gradient(circle,rgba(189,95,44,0.15),transparent 70%)}
+  .page-hero-inner{position:relative;max-width:680px}
+  .page-hero .eyebrow{color:var(--rust)}
+  .page-hero h1{font-family:var(--font-serif);font-weight:700;font-size:clamp(32px,4.2vw,46px);color:white;line-height:1.18;margin-bottom:18px}
+  .page-hero p{color:rgba(255,255,255,0.75);font-size:15.5px;line-height:1.7;max-width:600px;margin-bottom:28px}
+  footer{background:var(--forest-deep);color:rgba(255,255,255,0.6);padding:56px 0 28px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .footer-logo-text{font-family:var(--font-serif);font-weight:700;font-size:18px;color:white;line-height:1.1}
+  .footer-logo-text small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.5)}
+  .footer-tagline{font-size:13px;line-height:1.6;max-width:280px}
+  .footer-col h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.65)} .footer-col ul li a:hover{color:var(--rust)}
+  .footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.65)}
+  .footer-social{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-top:8px;font-size:13px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.35);text-align:center}
+  @media(max-width:768px){.nav-hamburger{display:flex}.nav-links{display:none}}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:32px}}
+
+  .projects-list{padding:64px 0;background:var(--cream)}
+  .project-row{display:grid;grid-template-columns:280px 1fr;gap:36px;padding:36px 0;border-top:1px solid rgba(0,0,0,0.08);align-items:center}
+  .project-row:last-child{border-bottom:1px solid rgba(0,0,0,0.08)}
+  .project-img{background:var(--cream-dark);border-radius:4px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:26px;position:relative}
+  .project-badge{position:absolute;bottom:-14px;left:16px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.2)}
+  .project-tag{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
+  .project-title{font-family:var(--font-serif);font-weight:700;font-size:23px;color:var(--forest);margin-bottom:8px;line-height:1.2}
+  .project-desc{font-size:14.5px;color:var(--gray);line-height:1.65;max-width:560px}
+
+  @media(max-width:800px){
+    .project-row{grid-template-columns:1fr;gap:18px}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo">
+      <span class="logo-mark">🏔️</span>
+      <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="community-development.html">Community Development</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<section class="page-hero">
+  <div class="container page-hero-inner">
+    <p class="eyebrow">Featured Projects</p>
+    <h1>Real Work, Real Communities.</h1>
+    <p>These started as trail conversations and turned into real concepts and completed work for communities around Western Kentucky. Here's a look at what we've been part of.</p>
+    <a href="contact.html" class="btn btn-solid">Start a Conversation</a>
+  </div>
+</section>
+
+<section class="projects-list">
+  <div class="container">
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-henderson.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--forest)">🗺️</div></div>
+      <div>
+        <div class="project-tag">Park Master Plan</div>
+        <div class="project-title">Henderson Park Master Plan</div>
+        <p class="project-desc">Creating a long-term vision for outdoor recreation that benefits the entire community — layout concepts, feature placement, and a phased approach the city can act on.</p>
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-madisonville.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--steel)">🍃</div></div>
+      <div>
+        <div class="project-tag">Trail Initiative</div>
+        <div class="project-title">Madisonville Trail Initiative</div>
+        <p class="project-desc">Strengthening connections through active transportation and sustainable trail development — helping the city build infrastructure that gets more people outside.</p>
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-hopkins-cycling.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--rust)">🚲</div></div>
+      <div>
+        <div class="project-tag">Cycling Program</div>
+        <div class="project-title">Hopkins County Cycling</div>
+        <p class="project-desc">Supporting riders through education, maintenance, and community events — building a stronger local cycling culture county-wide.</p>
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-grapevine.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--forest)">🚵</div></div>
+      <div>
+        <div class="project-tag">Trail System</div>
+        <div class="project-title">Grapevine Recreational Trails</div>
+        <p class="project-desc">Helped get the city to revitalize Grapevine Park and fund a new trail system. Now hosts SWKyMBA races, NICA league practices, and community volunteer days.</p>
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-regional-trails.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--steel)">🛠️</div></div>
+      <div>
+        <div class="project-tag">Regional Trail Work</div>
+        <div class="project-title">Ben Hawes, Harmonie &amp; Cave Creek</div>
+        <p class="project-desc">Sustainable trail design and construction work across the region through SWKyMBA, an IMBA-affiliated chapter.</p>
+      </div>
+    </div>
+
+    <div class="project-row">
+      <div class="project-img" style="background-image:url('images/project-hopkins-active-living.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--rust)">📍</div></div>
+      <div>
+        <div class="project-tag">County Initiative</div>
+        <div class="project-title">Hopkins County Active Living Project</div>
+        <p class="project-desc">Helped lead the county-wide push toward active living, identifying trail and recreation land opportunities as the critical first step.</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <span class="logo-mark">🏔️</span>
+          <div class="footer-logo-text">BReeZ<small>CYCLE WORX</small></div>
+        </div>
+        <p class="footer-tagline">Building healthier communities through recreation, collaboration, and sustainable outdoor experiences.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="community-development.html">Community Development</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-contact-item">📞 <a href="tel:2708700587">(270) 870-0587</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
+        <div class="footer-contact-item">📍 Madisonville, Kentucky</div>
+        <div class="footer-social">f</div>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 BReeZ Cycle Worx. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
