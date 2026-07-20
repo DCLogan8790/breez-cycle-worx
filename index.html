@@ -127,9 +127,9 @@
   .cta{position:relative;padding:80px 0;overflow:hidden;background:var(--cream-dark)}
   .cta-bg{position:absolute;inset:0;background:linear-gradient(180deg, rgba(30,58,44,0.55), rgba(20,30,25,0.7)), url('images/cta-mountains.jpg') center/cover}
   .cta-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.3fr 1fr;gap:40px;align-items:center}
-  .cta h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.2vw,34px);color:var(--forest);line-height:1.2;margin-bottom:12px}
-  .cta p{font-size:14.5px;color:var(--ink);max-width:460px;line-height:1.65}
+.cta h2{font-family:var(--font-serif);font-weight:600;font-size:clamp(26px,3.2vw,34px);color:var(--white);line-height:1.2;margin-bottom:12px}  .cta p{font-size:14.5px;color:var(--ink);max-width:460px;line-height:1.65}
   .cta-btns{display:flex;flex-direction:column;gap:12px;align-items:flex-end}
+  .cta p{font-size:14.5px;color:rgba(245,241,230,0.85);max-width:460px;line-height:1.65}
 
   /* FOOTER */
   footer{background:var(--forest-deep);color:rgba(255,255,255,0.6);padding:56px 0 28px}
@@ -166,10 +166,22 @@
     .process-arrow{display:none}
   }
   @media(max-width:768px){
-    .nav-hamburger{display:flex}
-    .nav-links{display:none}
-    .hero{min-height:480px}
-    .hero-content{max-width:100%}
+  .nav-hamburger{display:flex}
+  .nav-links{display:none}
+  .nav-links.nav-open{
+    display:flex;
+    flex-direction:column;
+    position:absolute;
+    top:64px;
+    left:0;
+    right:0;
+    background:var(--cream);
+    padding:24px 32px;
+    gap:18px;
+    border-bottom:1px solid rgba(0,0,0,0.08);
+    z-index:99;
+  }
+
   }
   @media(max-width:600px){
     .work-grid{grid-template-columns:repeat(2,1fr)}
@@ -194,7 +206,7 @@
       <li><a href="about.html">About</a></li>
       <li><a href="contact.html">Contact</a></li>
     </ul>
-    <div class="nav-hamburger"><span></span><span></span><span></span></div>
+    <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></div>
   </div>
 </nav>
 
@@ -390,7 +402,7 @@
     </div>
     <div class="cta-btns">
       <a href="contact.html" class="btn btn-solid">Schedule a Consultation</a>
-      <a href="contact.html" class="btn btn-outline">Contact Our Team</a>
+      <a href="contact.html" class="btn btn-outline-light">Contact Our Team</a>
     </div>
   </div>
 </section>
