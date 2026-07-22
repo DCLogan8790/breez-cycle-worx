@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>Projects — BReeZ Cycle Worx</title>
+<title>Projects & Community Support — BReeZ Cycle Worx</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
@@ -82,20 +82,48 @@
     border-bottom:1px solid rgba(0,0,0,0.08);
     z-index:99;
   }
-}
+
+  }
   @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:32px}}
 
   .projects-list{padding:64px 0;background:var(--cream)}
-  .project-row{display:grid;grid-template-columns:280px 1fr;gap:36px;padding:36px 0;border-top:1px solid rgba(0,0,0,0.08);align-items:center}
+  .project-row{display:grid;grid-template-columns:280px 1fr;gap:36px;padding:40px 0;border-top:1px solid rgba(0,0,0,0.08);align-items:start}
   .project-row:last-child{border-bottom:1px solid rgba(0,0,0,0.08)}
-  .project-img{background:var(--cream-dark);border-radius:4px;aspect-ratio:4/3;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:26px;position:relative}
-  .project-badge{position:absolute;bottom:-14px;left:16px;width:36px;height:36px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:white;font-size:14px;box-shadow:0 2px 5px rgba(0,0,0,0.2)}
+  .project-img{background:var(--cream-dark);border-radius:4px;aspect-ratio:4/3;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gray);font-size:22px;text-align:center;padding:16px;gap:6px}
+  .project-img-label{font-size:10.5px;letter-spacing:0.05em;text-transform:uppercase;line-height:1.4}
   .project-tag{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--rust);margin-bottom:8px}
-  .project-title{font-family:var(--font-serif);font-weight:700;font-size:23px;color:var(--forest);margin-bottom:8px;line-height:1.2}
-  .project-desc{font-size:14.5px;color:var(--gray);line-height:1.65;max-width:560px}
+  .project-title{font-family:var(--font-serif);font-weight:700;font-size:23px;color:var(--forest);margin-bottom:10px;line-height:1.2}
+  .project-desc{font-size:14.5px;color:var(--gray);line-height:1.65;max-width:640px;margin-bottom:18px}
+  .support-label{font-family:var(--font-body);font-size:11.5px;font-weight:700;letter-spacing:0.08em;text-transform:uppercase;color:var(--forest);margin-bottom:10px}
+  .support-list{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:6px 24px;max-width:560px}
+  .support-list li{font-size:13.5px;color:var(--ink);padding-left:16px;position:relative;line-height:1.5}
+  .support-list li::before{content:'';position:absolute;left:0;top:7px;width:5px;height:5px;border-radius:50%;background:var(--rust)}
+
+  .getting-started{position:relative;padding:72px 0;background:var(--forest);color:white;overflow:hidden}
+  .getting-started::before{content:'';position:absolute;inset:0;background-image:linear-gradient(90deg,rgba(21,40,32,0.92) 0%,rgba(21,40,32,0.72) 45%,rgba(21,40,32,0.85) 100%),url('Images/maps.jpg');background-position:center;background-size:cover;background-repeat:no-repeat;opacity:0.85;z-index:0}
+  .getting-started-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:start}
+  .getting-started .eyebrow{color:var(--rust)}
+  .getting-started h2{font-family:var(--font-serif);font-weight:700;font-size:clamp(28px,3.4vw,36px);color:white;line-height:1.2;margin-bottom:16px}
+  .getting-started p{color:rgba(255,255,255,0.75);font-size:15px;line-height:1.7;max-width:520px}
+  .getting-started .note{font-size:13.5px;color:rgba(255,255,255,0.5);margin-top:20px;font-style:italic;max-width:520px}
+  .gs-list{list-style:none;display:flex;flex-direction:column;gap:11px}
+  .gs-list li{display:flex;align-items:flex-start;gap:12px;font-size:14.5px;color:rgba(255,255,255,0.85)}
+  .gs-list li::before{content:'';flex-shrink:0;width:6px;height:6px;border-radius:50%;background:var(--rust);margin-top:8px}
+  .gs-img-note{margin-top:24px;font-size:12px;color:rgba(255,255,255,0.4);text-align:right}
+
+  .sponsor-strip{padding:36px 0;background:var(--cream-dark);text-align:center}
+  .sponsor-strip p{font-size:14px;color:var(--gray);max-width:680px;margin:0 auto}
+  .sponsor-strip strong{color:var(--forest)}
+
+  .contact-strip{padding:44px 0;background:var(--cream);text-align:center;border-top:1px solid rgba(0,0,0,0.08)}
+  .contact-strip-inner{display:flex;justify-content:center;gap:40px;flex-wrap:wrap}
+  .contact-strip-item{font-size:15px;color:var(--forest);font-weight:600}
+  .contact-strip-item a{color:var(--forest)}
 
   @media(max-width:800px){
     .project-row{grid-template-columns:1fr;gap:18px}
+    .support-list{grid-template-columns:1fr}
+    .getting-started-inner{grid-template-columns:1fr;gap:32px}
   }
 </style>
 </head>
@@ -103,8 +131,8 @@
 
 <nav>
   <div class="container nav-inner">
-    <a href="index.html" class="logo">
-      <img src="images/logo1.png" alt="BReeZ Cycle Worx" class="logo-mark" style="height:32px;width:auto">
+    <a href="index.html" class="logo" style="text-decoration:none">
+      <span class="logo-mark">🏔️</span>
       <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
     </a>
     <ul class="nav-links">
@@ -120,9 +148,9 @@
 
 <section class="page-hero">
   <div class="container page-hero-inner">
-    <p class="eyebrow">Featured Projects</p>
-    <h1>Real Work, Real Communities.</h1>
-    <p>These started as trail conversations and turned into real concepts and completed work for communities around Western Kentucky. Here's a look at what we've been part of.</p>
+    <p class="eyebrow">Projects &amp; Community Support</p>
+    <h1>Here's How BReeZ Cycle Worx Supports Communities, Parks &amp; Trail Systems.</h1>
+    <p>Each of these is real work we've been part of — not just trails we ride, but communities and organizations we've supported along the way.</p>
     <a href="contact.html" class="btn btn-outline-light">Start a Conversation</a>
   </div>
 </section>
@@ -130,60 +158,129 @@
 <section class="projects-list">
   <div class="container">
 
+    <!-- MADISONVILLE IN MOTION -->
     <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-henderson.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--forest)">🗺️</div></div>
+      <div class="project-img" style="background-image:url('images/project-madisonville.jpg');background-size:cover;background-position:center"></div>
       <div>
-        <div class="project-tag">Park Master Plan</div>
-        <div class="project-title">Henderson Park Master Plan</div>
-        <p class="project-desc">Creating a long-term vision for outdoor recreation that benefits the entire community — layout concepts, feature placement, and a phased approach the city can act on.</p>
+        <div class="project-tag">Community Initiative</div>
+        <div class="project-title">Madisonville in Motion</div>
+        <p class="project-desc">Helping local leaders, riders, and community partners develop a long-term vision for outdoor recreation by leading the development of a Walk &amp; Bike Master Plan, identifying trail opportunities, and creating connected pathways that encourage cycling, walking, and active transportation throughout the community.</p>
+        <div class="support-label">BReeZ Support</div>
+        <ul class="support-list">
+          <li>Community meetings</li>
+          <li>Trail advocacy</li>
+          <li>Recreation planning</li>
+          <li>Local stakeholder support</li>
+        </ul>
       </div>
     </div>
 
+    <!-- GRAPEVINE -->
     <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-madisonville.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--steel)">🍃</div></div>
+      <div class="project-img" style="background-image:url('images/project-grapevine.jpg');background-size:cover;background-position:center"></div>
       <div>
-        <div class="project-tag">Trail Initiative</div>
-        <div class="project-title">Madisonville Trail Initiative</div>
-        <p class="project-desc">Strengthening connections through active transportation and sustainable trail development — helping the city build infrastructure that gets more people outside.</p>
+        <div class="project-tag">Trail Support</div>
+        <div class="project-title">Grapevine Recreation Area Trail System</div>
+        <p class="project-desc">Approximately 8.5 miles of natural surface trails designed for beginner and intermediate riders. The system includes dedicated flow lines, natural surface flowing singletrack, and connects multiple loop options — making it one of Western Kentucky's best places to begin mountain biking.</p>
+        <div class="support-label">BReeZ Support</div>
+        <ul class="support-list">
+          <li>Trail assessments</li>
+          <li>Rider feedback</li>
+          <li>Community advocacy</li>
+          <li>Planning support</li>
+          <li>Ongoing maintenance collaboration</li>
+        </ul>
       </div>
     </div>
 
+    <!-- PENNYRILE -->
     <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-hopkins-cycling.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--rust)">🚲</div></div>
+      <div class="project-img" style="background-image:url('images/project-pennyrile.jpg');background-size:cover;background-position:center"></div>
       <div>
-        <div class="project-tag">Cycling Program</div>
-        <div class="project-title">Hopkins County Cycling</div>
-        <p class="project-desc">Supporting riders through education, maintenance, and community events — building a stronger local cycling culture county-wide.</p>
+        <div class="project-tag">Regional Trail Support</div>
+        <div class="project-title">Pennyrile Forest State Resort Park MTB Trails</div>
+        <p class="project-desc">Over 12 miles of natural surface mountain bike trails located within Pennyrile Forest State Resort Park. Riders experience wooded terrain, creek crossings, rolling climbs, and scenic forest views. The trail system offers an authentic Kentucky mountain biking experience suitable for families, recreational riders, traditional mountain bikes, and e-bikes where permitted.</p>
+        <div class="support-label">BReeZ Support</div>
+        <ul class="support-list">
+          <li>Trail advocacy</li>
+          <li>Volunteer trail support</li>
+          <li>Community partnerships</li>
+          <li>Rider promotion</li>
+          <li>Regional recreation awareness</li>
+        </ul>
       </div>
     </div>
 
+    <!-- BEN HAWES -->
     <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-grapevine.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--forest)">🚵</div></div>
+      <div class="project-img" style="background-image:url('images/project-benhawes.jpg');background-size:cover;background-position:center"></div>
       <div>
-        <div class="project-tag">Trail System</div>
-        <div class="project-title">Grapevine Recreational Trails</div>
-        <p class="project-desc">Helped get the city to revitalize Grapevine Park and fund a new trail system. Now hosts SWKyMBA races, NICA league practices, and community volunteer days.</p>
+        <div class="project-tag">Regional Trail Support</div>
+        <div class="project-title">Rudy Mines Trail — Ben Hawes Park</div>
+        <p class="project-desc">Approximately 8 miles of mountain bike trails featuring beginner and intermediate riding with flowing terrain, berms, optional jumps, and multiple loop combinations. A destination trail system serving riders throughout Western Kentucky.</p>
+        <div class="support-label">BReeZ Support</div>
+        <ul class="support-list">
+          <li>Local rider feedback</li>
+          <li>Planning discussions</li>
+          <li>Volunteer support</li>
+          <li>Trail improvement recommendations</li>
+        </ul>
       </div>
     </div>
 
+    <!-- DAWSON SPRINGS -->
     <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-regional-trails.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--steel)">🛠️</div></div>
+      <div class="project-img" style="background-image:url('images/project-dawsonsprings.jpg');background-size:cover;background-position:center"></div>
       <div>
-        <div class="project-tag">Regional Trail Work</div>
-        <div class="project-title">Ben Hawes, Harmonie &amp; Cave Creek</div>
-        <p class="project-desc">Sustainable trail design and construction work across the region through SWKyMBA, an IMBA-affiliated chapter.</p>
+        <div class="project-tag">Trail Town Development</div>
+        <div class="project-title">Dawson Springs Trail Town Revitalization</div>
+        <p class="project-desc">Supporting Dawson Springs as it strengthens its identity as a Kentucky Trail Town by improving rider navigation, community connections, and access between downtown and Pennyrile Forest.</p>
+        <div class="support-label">BReeZ Support</div>
+        <ul class="support-list">
+          <li>Grant implementation support</li>
+          <li>Trail signage development</li>
+          <li>Community wayfinding</li>
+          <li>Visitor communication</li>
+          <li>Recreation planning</li>
+        </ul>
       </div>
     </div>
 
-    <div class="project-row">
-      <div class="project-img" style="background-image:url('images/project-hopkins-active-living.jpg');background-size:cover;background-position:center"><div class="project-badge" style="background:var(--rust)">📍</div></div>
-      <div>
-        <div class="project-tag">County Initiative</div>
-        <div class="project-title">Hopkins County Active Living Project</div>
-        <p class="project-desc">Helped lead the county-wide push toward active living, identifying trail and recreation land opportunities as the critical first step.</p>
+  </div>
+</section>
+
+<!-- SWKyMBA SPONSORSHIP NOTE -->
+<section class="sponsor-strip">
+  <div class="container">
+    <p><strong>BReeZ Cycle Worx</strong> is a proud business member and sponsor of the Southwest Kentucky Mountain Bike Association (SWKyMBA), reinforcing our place in the local riding community and supporting the volunteer trail work happening across the region.</p>
+  </div>
+</section>
+
+<!-- NEED HELP GETTING STARTED -->
+<section class="getting-started">
+  <div class="container getting-started-inner">
+    <div>
+      <p class="eyebrow">Community Planning Services</p>
+      <h2>Need Help Getting Started?</h2>
+      <p>Whether you're a city, county, parks department, neighborhood group, or trail advocate, BReeZ Cycle Worx can help during the early planning stages of outdoor recreation projects.</p>
+      <p class="note">The goal isn't to replace an engineering firm or trail builder. It's to help communities understand what's possible, connect with the right partners, and move projects from ideas toward reality.</p>
+      <div style="margin-top:28px">
+        <a href="contact.html" class="btn btn-outline-light">Start a Conversation</a>
       </div>
     </div>
-
+    <div>
+      <div class="support-label" style="color:rgba(255,255,255,0.5)">We Assist With</div>
+      <ul class="gs-list">
+        <li>Initial concept discussions</li>
+        <li>Site walks</li>
+        <li>Recreation planning</li>
+        <li>Trail system recommendations</li>
+        <li>Community presentations</li>
+        <li>Stakeholder meetings</li>
+        <li>Grant support</li>
+        <li>Rider perspective and feedback</li>
+      </ul>
+      
   </div>
 </section>
 
@@ -208,8 +305,8 @@
       </div>
       <div class="footer-col">
         <h4>Connect</h4>
-        <div class="footer-contact-item">📞 <a href="tel:2708700587">(270) 870-0587</a></div>
-         <div class="footer-contact-item">✉️ <a href="mailto:bikeshop@breezcycleworx.com">bikeshop@breezcycleworx.com</a></div>
+        <div class="footer-contact-item">📞 <a href="tel:9045741156">(904) 574-1156</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
         <div class="footer-contact-item">📍 Madisonville, Kentucky</div>
         <a href="https://www.facebook.com/BReeZCycleWorx" target="_blank" rel="noopener" class="footer-social">f</a>
       </div>
