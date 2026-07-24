@@ -88,6 +88,9 @@
   .exp-icon-item{text-align:center;width:90px}
   .exp-icon{font-size:24px;margin-bottom:8px;opacity:0.9}
   .exp-icon-label{font-size:11.5px;color:rgba(255,255,255,0.75);line-height:1.35}
+  .cycle-worx-section{padding:64px 0;background:var(--cream)}
+.cycle-worx-inner{display:grid;grid-template-columns:1.15fr 1fr;gap:60px;align-items:center}
+.cycle-worx-img{background:var(--cream-dark);border-radius:4px;min-height:320px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gray);font-size:13px;letter-spacing:0.08em;text-transform:uppercase;gap:10px}
 
   /* PROCESS + IMPACT */
   .process-section{background:var(--cream);padding:64px 0}
@@ -155,6 +158,8 @@
     .cta-inner{grid-template-columns:1fr;text-align:center}
     .cta-btns{align-items:center}
     .cta p{margin:0 auto}
+    .cycle-worx-inner{grid-template-columns:1fr;gap:32px}
+.cycle-worx-img{min-height:220px}
   }
   @media(max-width:860px){
     .feature-grid{grid-template-columns:1fr;gap:32px}
@@ -200,12 +205,11 @@
       <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
     </a>
     <ul class="nav-links">
-      <li><a href="index.html">Home</a></li>
-      <li><a href="community-development.html">Community Development</a></li>
-      <li><a href="projects.html">Projects</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
+  <li><a href="index.html" class="active">Home</a></li>
+  <li><a href="community-development.html">Community &amp; Trail Development</a></li>
+  <li><a href="projects.html">Projects</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
     <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></div>
   </div>
 </nav>
@@ -250,6 +254,32 @@
     </div>
   </div>
 </section>
+
+<!-- BREEZ CYCLE WORX — full section, light background -->
+<section id="our-services" class="cycle-worx-section">
+  <div class="container cycle-worx-inner">
+    <div>
+      <p class="eyebrow">BReeZ Cycle Worx</p>
+      <h2 class="h2">Professional Bicycle Services.</h2>
+      <p class="lede">Through BReeZ Cycle Worx, we provide professional bicycle services — repair, maintenance, custom builds, and quality parts. Real work from people who ride the same roads and trails you do.</p>
+      <p class="lede" style="margin-top:14px">Contact us so we can talk about all the services we could provide for you and your build.</p>
+      <a href="contact.html" class="btn btn-solid" style="margin-top:24px">Contact Us</a>
+    </div>
+    <div class="cycle-worx-img">
+      <img src="images/bike-service.jpg" alt="Bike Service">
+    </div>
+  </div>
+</section>
+<!-- Quick Way to Verify You've Got Everything
+
+In VS Code, search (Ctrl+F) for cycle-worx-inner — it should find exactly 2 matches: one in your CSS (.cycle-worx-inner{...}) and one in your mobile media query (.cycle-worx-inner{grid-template-columns:1fr...}). If you only find one match, the mobile rule is missing and needs to be added.
+
+Once confirmed, save and push:
+
+git add .
+git commit -m "confirm responsive css for service sections"
+git push
+-->
 
 <!-- EXPERTISE BAND -->
 <section class="expertise" id="about">
