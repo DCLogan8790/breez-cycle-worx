@@ -88,10 +88,42 @@
   .intro{padding:64px 0;background:var(--cream)}
   .intro-inner{max-width:760px}
 
-  .stats-band{background:var(--cream-dark);padding:44px 0}
-  .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;text-align:center}
-  .stat-num{font-family:var(--font-serif);font-weight:700;font-size:28px;color:var(--forest)}
-  .stat-label{font-size:12.5px;color:var(--gray);margin-top:4px;line-height:1.35}
+.stats-band{
+  background:var(--cream-dark);
+  padding:44px 0;
+}
+
+.stats-grid{
+  display:grid;
+  grid-template-columns:repeat(3, minmax(0, 1fr));
+  gap:28px;
+  text-align:center;
+}
+
+.stats-grid > div{
+  min-height:140px;
+  padding:22px 18px;
+  display:flex;
+  flex-direction:column;
+  align-items:center;
+  justify-content:center;
+}
+
+.stat-num{
+  font-family:var(--font-serif);
+  font-weight:700;
+  font-size:clamp(28px,3vw,38px);
+  line-height:1.1;
+  color:var(--forest);
+}
+
+.stat-label{
+  max-width:240px;
+  margin-top:8px;
+  font-size:13px;
+  color:var(--gray);
+  line-height:1.4;
+}
 
   .team-section{padding:64px 0;background:var(--cream)}
   .team-header{max-width:600px;margin-bottom:44px}
@@ -118,11 +150,39 @@
   .cta-band p{margin:0 auto 28px}
 
   @media(max-width:900px){
-    .stats-grid{grid-template-columns:1fr 1fr}
-    .team-card{grid-template-columns:1fr}
-    .team-photo{width:120px;margin:0 auto}
-    .why-grid{grid-template-columns:1fr}
+  .stats-grid{
+    grid-template-columns:repeat(2, minmax(0, 1fr));
   }
+
+  .team-card{
+    grid-template-columns:1fr;
+  }
+
+  .team-photo{
+    width:120px;
+    margin:0 auto;
+  }
+
+  .why-grid{
+    grid-template-columns:1fr;
+  }
+}
+@media(max-width:560px){
+  .container{
+    padding-left:20px;
+    padding-right:20px;
+  }
+
+  .stats-grid{
+    grid-template-columns:1fr;
+    gap:12px;
+  }
+
+  .stats-grid > div{
+    min-height:auto;
+    padding:18px 12px;
+  }
+}
 </style>
 </head>
 <body>
@@ -164,10 +224,37 @@
 
 <section class="stats-band">
   <div class="container stats-grid">
-    <div><div class="stat-num">20+</div><div class="stat-label">Years of Combined Trail, Recreation &amp; Business Experience</div></div>
-    <div><div class="stat-num">500+</div><div class="stat-label">Volunteer Hours Supporting Local Trails</div></div>
-    <div><div class="stat-num">1,000+</div><div class="stat-label">Miles Ridden &amp; Evaluated Every Year</div></div>
-    <div><div class="stat-num">5+</div><div class="stat-label">Communities Served</div></div>
+
+    <div>
+      <div class="stat-num">20+ Years</div>
+      <div class="stat-label">Combined Trail Experience</div>
+    </div>
+
+    <div>
+      <div class="stat-num">8+</div>
+      <div class="stat-label">Communities Served</div>
+    </div>
+
+    <div>
+      <div class="stat-num">20+</div>
+      <div class="stat-label">Trail Projects Completed</div>
+    </div>
+
+    <div>
+      <div class="stat-num">60+ Miles</div>
+      <div class="stat-label">Trails Built &amp; Maintained</div>
+    </div>
+
+    <div>
+      <div class="stat-num">2,000+ Hours</div>
+      <div class="stat-label">Volunteer Service Contributed</div>
+    </div>
+
+    <div>
+      <div class="stat-num">$1M+</div>
+      <div class="stat-label">Grant &amp; Community Investment Supported</div>
+    </div>
+
   </div>
 </section>
 
@@ -203,13 +290,13 @@
     <div class="team-name">Richard Dixon</div>
     <div class="team-title">Trail Design &amp; Senior Trail Builder</div>
     <div class="team-bio">
-      <p>Richard has nearly two decades of mountain bike trail design and construction experience, mentored early on by one of the best trail builders in the Midwest after recognizing the value of sustainable trail design.</p>
-      <p>A longtime member and volunteer with the Southwest Kentucky Mountain Bike Association (an IMBA chapter), Richard has worked with government agencies and land managers on consulting, fundraising, designing, constructing, and maintaining sustainable trails — including Ben Hawes, Harmonie, Cave Creek, Grapevine Lake, and Hanson.</p>
+      <p>Richard has nearly two decades of mountain bike trail design and construction experience. Mentored early in his career by one of the Midwest's leading trail builders, he developed a strong foundation in sustainable trail design and rider-focused trail systems.</p>
+      <p>As a longtime member and volunteer with the Southwest Kentucky Mountain Bike Association (an IMBA chapter), Richard has partnered with government agencies, municipalities, and land managers to consult, secure funding, design, build, and maintain sustainable trail systems. His project experience includes Ben Hawes, Harmonie, Cave Creek, Grapevine Lake, Hanson, and other outdoor recreation initiatives.</p>
     </div>
     <ul class="team-highlights">
       <li>SWKyMBA / IMBA Chapter Member</li>
-      <li>Ben Hawes · Harmonie · Cave Creek</li>
-      <li>Grapevine Lake · Hanson</li>
+      <li>20+ Years Trail Design & Construction</li>
+      <li>Ben Hawes · Harmonie · Cave Creek · Grapevine · Hanson</li>
     </ul>
 <div class="team-trail-photo" style="background-image:url('images/richard-trail-photo.png');background-size:contain;background-repeat:no-repeat;background-position:center"></div>  </div>
 </div>
@@ -277,9 +364,9 @@
       <div class="footer-col">
         <h4>Quick Links</h4>
         <ul>
+          <li><a href="about.html">About Us</a></li>
           <li><a href="community-development.html">Community Development</a></li>
           <li><a href="projects.html">Projects</a></li>
-          <li><a href="about.html">About Us</a></li>
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
