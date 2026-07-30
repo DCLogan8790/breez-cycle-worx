@@ -66,9 +66,27 @@
   .footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.65)}
   .footer-social{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-top:8px;font-size:13px}
   .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.35);text-align:center}
+  .single-photo{
+  width:100%;
+  height:280px;
+  margin-top:22px;
+  border-radius:4px;
+  overflow:hidden;
+  background:var(--cream-dark);
+}
+.single-photo img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
+}
+
   @media(max-width:768px){
   .nav-hamburger{display:flex}
   .nav-links{display:none}
+  .single-photo{
+  height:220px;
+}
   .nav-links.nav-open{
     display:flex;
     flex-direction:column;
@@ -82,6 +100,7 @@
     border-bottom:1px solid rgba(0,0,0,0.08);
     z-index:99;
   }
+  
 }
   @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:32px}}
 
@@ -131,14 +150,83 @@
   .team-card{background:var(--white);border-radius:4px;padding:36px;display:grid;grid-template-columns:160px 1fr;gap:32px;align-items:start}
   .team-photo{background:var(--cream-dark);border-radius:50%;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;color:var(--gray);font-size:40px}
   .team-photo-col{display:flex;flex-direction:column;gap:12px}
-.team-trail-photo{width:100%;aspect-ratio:3/4;background-color:var(--cream-dark);border-radius:4px;background-size:cover;background-position:center top}
   .team-name{font-family:var(--font-serif);font-weight:700;font-size:24px;color:var(--forest);margin-bottom:4px}
+  /* Team project photo collage */
+
+.team-collage{
+  width:100%;
+  height:300px;
+  margin-top:22px;
+  display:grid;
+  grid-template-columns:1.45fr 1fr;
+  grid-template-rows:1fr 1fr;
+  gap:8px;
+  overflow:hidden;
+  border-radius:4px;
+  background:var(--cream-dark);
+}
+
+.team-collage img{
+  width:100%;
+  height:100%;
+  display:block;
+  object-fit:cover;
+  transition:transform 0.3s ease;
+}
+
+.team-collage img:first-child{
+  grid-column:1;
+  grid-row:1 / 3;
+}
+
+.team-collage img:nth-child(2){
+  grid-column:2;
+  grid-row:1;
+}
+
+.team-collage img:nth-child(3){
+  grid-column:2;
+  grid-row:2;
+}
+
+.team-collage img:hover{
+  transform:scale(1.025);
+}
+
+@media(max-width:700px){
+  .team-collage{
+    height:260px;
+    grid-template-columns:1.3fr 1fr;
+  }
+}
+
+@media(max-width:480px){
+  .team-collage{
+    height:auto;
+    grid-template-columns:1fr 1fr;
+    grid-template-rows:190px 120px;
+  }
+
+  .team-collage img:first-child{
+    grid-column:1 / 3;
+    grid-row:1;
+  }
+
+  .team-collage img:nth-child(2){
+    grid-column:1;
+    grid-row:2;
+  }
+
+  .team-collage img:nth-child(3){
+    grid-column:2;
+    grid-row:2;
+  }
+}
   .team-title{font-family:var(--font-body);font-size:12.5px;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;color:var(--rust);margin-bottom:14px}
   .team-bio{font-size:14.5px;color:var(--gray);line-height:1.7}
   .team-bio p + p{margin-top:10px}
 .team-highlights{list-style:none;margin-top:14px;display:flex;flex-wrap:wrap;gap:8px}
 .team-highlights li{background:var(--cream-dark);border:1px solid rgba(0,0,0,0.08);border-radius:4px;padding:5px 12px;font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:0.04em;text-transform:uppercase;color:var(--forest)}
-.team-trail-photo{margin-top:20px;background:var(--cream-dark);border-radius:4px;width:100%;height:280px;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--gray);font-size:12px;letter-spacing:0.06em;text-transform:uppercase;gap:8px}  
 .why-section .eyebrow{color:var(--rust)}
 .why-section{padding:64px 0;background:var(--forest);color:white}  
 .why-section h2{color:white} 
@@ -260,6 +348,7 @@
 
 <section class="team-section">
   <div class="container">
+
     <div class="team-header">
       <p class="eyebrow">Our Team</p>
       <h2 class="h2">People Who've Actually Built Trails.</h2>
@@ -267,7 +356,9 @@
 
     <div class="team-list">
 
-     <div class="team-card">
+      <!-- Stephanie -->
+      <!-- STEPHANIE -->
+<div class="team-card">
   <div class="team-photo" style="background-image:url('images/team-stephanie.jpg');background-size:cover;background-position:center"></div>
   <div>
     <div class="team-name">Stephanie Camille</div>
@@ -281,51 +372,125 @@
       <li>Former Deputy Director, Volunteer Tennessee</li>
       <li>Nashville MPO Bike &amp; Ped Plan — HIA</li>
     </ul>
+    <div class="single-photo">
+      <img src="images/stephanie-hero.jpg" style="object-position:center 40%">
+    </div>
   </div>
 </div>
 
+      <!-- Richard -->
       <div class="team-card">
-  <div class="team-photo" style="background-image:url('images/team-richard.jpg');background-size:cover;background-position:center"></div>
-  <div>
-    <div class="team-name">Richard Dixon</div>
-    <div class="team-title">Trail Design &amp; Senior Trail Builder</div>
-    <div class="team-bio">
-      <p>Richard has nearly two decades of mountain bike trail design and construction experience. Mentored early in his career by one of the Midwest's leading trail builders, he developed a strong foundation in sustainable trail design and rider-focused trail systems.</p>
-      <p>As a longtime member and volunteer with the Southwest Kentucky Mountain Bike Association (an IMBA chapter), Richard has partnered with government agencies, municipalities, and land managers to consult, secure funding, design, build, and maintain sustainable trail systems. His project experience includes Ben Hawes, Harmonie, Cave Creek, Grapevine Lake, Hanson, and other outdoor recreation initiatives.</p>
-    </div>
-    <ul class="team-highlights">
-      <li>SWKyMBA / IMBA Chapter Member</li>
-      <li>20+ Years Trail Design & Construction</li>
-      <li>Ben Hawes · Harmonie · Cave Creek · Grapevine · Hanson</li>
-    </ul>
-<div class="team-trail-photo" style="background-image:url('images/richard-trail-photo.png');background-size:contain;background-repeat:no-repeat;background-position:center"></div>  </div>
+
+        <div
+          class="team-photo"
+          style="
+            background-image:url('images/team-richard.jpg');
+            background-size:cover;
+            background-position:center;
+          ">
+        </div>
+
+        <div>
+          <div class="team-name">Richard Dixon</div>
+
+          <div class="team-title">
+            Trail Design &amp; Senior Trail Builder
+          </div>
+
+          <div class="team-bio">
+            <p>
+              Richard has nearly two decades of mountain bike trail design and
+              construction experience. Mentored early in his career by one of
+              the Midwest's leading trail builders, he developed a strong
+              foundation in sustainable trail design and rider-focused trail
+              systems.
+            </p>
+
+            <p>
+              As a longtime member and volunteer with the Southwest Kentucky
+              Mountain Bike Association (an IMBA chapter), Richard has
+              partnered with government agencies, municipalities, and land
+              managers to consult, secure funding, design, build, and maintain
+              sustainable trail systems. His project experience includes Ben
+              Hawes, Harmonie, Cave Creek, Grapevine Lake, Hanson, and other
+              outdoor recreation initiatives.
+            </p>
+          </div>
+
+          <ul class="team-highlights">
+            <li>SWKyMBA / IMBA Chapter Member</li>
+            <li>20+ Years Trail Design &amp; Construction</li>
+            <li>Ben Hawes · Harmonie · Cave Creek · Grapevine · Hanson</li>
+          </ul>
+
+          <div class="single-photo">
+  <img src="images/richard-assessment.PNG" style="object-position:center 30%">
 </div>
+        </div>
 
-     <div class="team-card">
-  <div class="team-photo" style="background-image:url('images/team-james.jpg');background-size:cover;background-position:center"></div>
-  <div>
-    <div class="team-name">James Leslie Seargent</div>
-    <div class="team-title">Owner &amp; Founder — 20+ Years in Executive Leadership &amp; Business Development</div>
-    <div class="team-bio">
-      <p>James brings 20+ years of executive leadership in business development, dealer network management, and product commercialization — building and managing partner networks across North America and Europe throughout his career. He holds a Bachelor of Science from Southern Illinois University.</p>
-      <p>After moving back to Madisonville, James brought that same leadership approach to a hands-on push for better trails and recreation in Hopkins County — helping identify land opportunities for hiking and biking as the critical first step. In 2020, he helped execute Madisonville in Motion, getting the city to revitalize Grapevine Park and fund a new trail system built by Rogue Trails of Arkansas. Grapevine Recreational Trails has since hosted the SWKyMBA local Time Trial race, NICA middle and high school mountain bike league practices, and community volunteer days with local partners like Carhartt and Corner Stone schools.</p>
-    </div>
-    <ul class="team-highlights">
-      <li>Founder, BReeZ Cycle Worx</li>
-      <li>20+ Years Executive &amp; Dealer Network Leadership</li>
-      <li>Partner Networks Across N. America &amp; Europe</li>
-    </ul>
+      </div>
 
-<div class="team-trail-photo" style="background-image:url('images/james-trail-photo.jpg');background-size:contain;background-repeat:no-repeat;background-position:center"></div>  </div>
 
-    </div>
-  </div>
+      <!-- James -->
+      <div class="team-card">
+
+        <div
+          class="team-photo"
+          style="
+            background-image:url('images/team-james.jpg');
+            background-size:cover;
+            background-position:center;
+          ">
+        </div>
+
+        <div>
+          <div class="team-name">James Leslie Seargent</div>
+
+          <div class="team-title">
+            Owner &amp; Founder — 20+ Years in Executive Leadership
+            &amp; Business Development
+          </div>
+
+          <div class="team-bio">
+            <p>
+              James brings 20+ years of executive leadership in business
+              development, dealer network management, and product
+              commercialization — building and managing partner networks
+              across North America and Europe throughout his career. He holds
+              a Bachelor of Science from Southern Illinois University.
+            </p>
+
+            <p>
+              After moving back to Madisonville, James brought that same
+              leadership approach to a hands-on push for better trails and
+              recreation in Hopkins County — helping identify land
+              opportunities for hiking and biking as the critical first step.
+              In 2020, he helped execute Madisonville in Motion, getting the
+              city to revitalize Grapevine Park and fund a new trail system
+              built by Rogue Trails of Arkansas. Grapevine Recreational Trails
+              has since hosted the SWKyMBA local Time Trial race, NICA middle
+              and high school mountain bike league practices, and community
+              volunteer days with local partners like Carhartt and Corner
+              Stone schools.
+            </p>
+          </div>
+
+          <ul class="team-highlights">
+            <li>Founder, BReeZ Cycle Worx</li>
+            <li>20+ Years Executive &amp; Dealer Network Leadership</li>
+            <li>Partner Networks Across N. America &amp; Europe</li>
+          </ul>
+
+          <div class="single-photo">
+  <img src="images/james-group.jpg" style="object-position:center 60%">
 </div>
+        </div>
+
+      </div>
 
     </div>
   </div>
 </section>
-
 <section class="why-section">
   <div class="container" style="text-align:center">
     <p class="eyebrow">What Sets Us Apart</p>
@@ -367,6 +532,7 @@
           <li><a href="about.html">About Us</a></li>
           <li><a href="community-development.html">Community Development</a></li>
           <li><a href="projects.html">Projects</a></li>
+
           <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
