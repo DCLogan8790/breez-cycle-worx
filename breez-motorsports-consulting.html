@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>BReeZ Motorsports Consulting — U.S. Market Entry for Specialty Vehicle Manufacturers</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#13293D;
+    --navy-deep:#0C1B29;
+    --steel:#5B7183;
+    --amber:#E8A33D;
+    --amber-dark:#CE8B27;
+    --paper:#F7F5F1;
+    --white:#FFFFFF;
+    --line:#DAD5CC;
+    --ink:#1A2733;
+    --font-head:'Archivo',sans-serif;
+    --font-body:'Inter',sans-serif;
+    --max-w:1180px;
+    --cream:#F5F1E6;
+    --cream-dark:#EDE6D6;
+    --forest:#1E3A2C;
+    --forest-deep:#152820;
+    --rust:#BD5F2C;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{font-family:var(--font-body);background:var(--white);color:var(--ink);line-height:1.7;font-size:16px;-webkit-font-smoothing:antialiased}
+  img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+  .container{width:100%;max-width:var(--max-w);margin:0 auto;padding:0 28px}
+
+  .kicker{font-family:var(--font-head);font-size:12px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:var(--amber);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .kicker::before{content:'';width:28px;height:2px;background:var(--amber)}
+  .h2{font-family:var(--font-head);font-weight:700;font-size:clamp(28px,3.6vw,40px);line-height:1.12;color:var(--navy);letter-spacing:-0.01em;margin-bottom:18px}
+  .lede{font-size:17px;color:var(--steel);max-width:640px;line-height:1.75}
+
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 30px;font-family:var(--font-head);font-weight:700;font-size:14px;letter-spacing:0.04em;text-transform:uppercase;cursor:pointer;transition:all 0.2s ease;border:none}
+  .btn-amber{background:var(--amber);color:var(--navy-deep)} .btn-amber:hover{background:var(--amber-dark)}
+  .btn-ghost{background:transparent;color:var(--white);box-shadow:inset 0 0 0 2px rgba(255,255,255,0.35)} .btn-ghost:hover{box-shadow:inset 0 0 0 2px var(--white)}
+  .btn-navy{background:var(--navy);color:var(--white)} .btn-navy:hover{background:var(--navy-deep)}
+
+  /* NAV — same structure/classes as BReeZ Cycle Worx site, retheme only */
+ nav{background:var(--cream);padding:20px 0;position:sticky;top:0;z-index:100;border-bottom:1px solid rgba(0,0,0,0.06)}
+  .nav-inner{display:flex;align-items:center;justify-content:space-between}
+ .logo{display:flex;align-items:center;gap:10px}
+  .logo-mark{font-size:26px;line-height:1}
+  .logo-text{font-family:var(--font-serif);font-weight:700;font-size:19px;color:var(--forest);letter-spacing:0.01em;line-height:1.1}
+  .logo-text small{display:block;font-family:var(--font-body);font-weight:600;font-size:10px;letter-spacing:0.18em;color:var(--gray)}
+  .nav-links{display:flex;gap:26px;list-style:none}
+  .nav-links a{font-family:var(--font-body);font-weight:600;font-size:11.5px;letter-spacing:0.07em;text-transform:uppercase;color:var(--ink)}
+  .nav-links a:hover{color:var(--rust)}
+  .nav-toggle{display:none}
+  .nav-hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+  .nav-hamburger span{width:24px;height:2px;background:var(--forest)}
+  
+  /* HERO */
+ .hero{
+  background:var(--navy);
+  color:var(--white);
+  padding:100px 0 60px;
+  position:relative;
+  overflow:hidden;
+}
+.hero-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(100deg, rgba(12,27,41,0.92) 0%, rgba(12,27,41,0.75) 45%, rgba(12,27,41,0.55) 100%),
+    url('images/motorsports-hero.jpg') center/cover;
+}
+.hero-inner{max-width:800px;position:relative;z-index:1}
+  .hero-kicker{font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber);margin-bottom:22px}
+  .hero h1{font-family:var(--font-head);font-weight:800;font-size:clamp(34px,4.6vw,54px);line-height:1.1;letter-spacing:-0.015em;margin-bottom:24px}
+  .hero p{font-size:18px;color:rgba(255,255,255,0.72);max-width:620px;line-height:1.75;margin-bottom:28px}
+  .hero-btns{display:flex;flex-wrap:wrap;gap:14px;margin-bottom:36px}
+  .credibility-line{font-family:var(--font-head);font-size:12.5px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.5);display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+  .credibility-line span:not(:last-child)::after{content:'•';margin-left:16px;color:var(--amber);opacity:0.7}
+
+  /* MARKETS & VEHICLE PLATFORMS */
+  .markets{padding:80px 0;background:var(--paper)}
+  .markets-head{max-width:640px;margin-bottom:44px}
+  .market-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .market-card{background:var(--white);padding:16px 18px;display:flex;align-items:center;gap:10px;min-height:56px}
+  .market-card::before{content:'';width:14px;height:2px;background:var(--amber);flex-shrink:0}
+  .market-name{font-family:var(--font-head);font-weight:600;font-size:13.5px;color:var(--navy);line-height:1.3}
+
+  /* CAPABILITIES */
+  .capabilities{padding:80px 0;background:var(--white)}
+  .capabilities-head{max-width:680px;margin-bottom:48px}
+  .capability-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .capability-row{background:var(--white);display:grid;grid-template-columns:60px 1fr;gap:24px;padding:30px 26px}
+  .capability-num{font-family:var(--font-head);font-weight:800;font-size:15px;color:var(--amber-dark)}
+  .capability-title{font-family:var(--font-head);font-weight:700;font-size:19px;color:var(--navy);margin-bottom:8px}
+  .capability-items{font-size:14.5px;color:var(--steel);line-height:1.6}
+  .capability-note{margin-top:20px;padding:18px 22px;background:var(--paper);border-left:3px solid var(--amber);font-size:14px;color:var(--steel);line-height:1.65}
+
+  /* EXPERIENCE */
+  .experience{padding:80px 0;position:relative;overflow:hidden;color:var(--white)}
+.experience-bg{
+  position:absolute;
+  inset:0;
+  background:
+    linear-gradient(100deg, rgba(12,27,41,0.93) 0%, rgba(12,27,41,0.82) 50%, rgba(12,27,41,0.75) 100%),
+    url('images/experience-bg.jpg') center/cover;
+}
+  .experience-head{max-width:640px;margin-bottom:44px}
+  .experience-head .h2{color:var(--white)}
+  .experience-head .lede{color:rgba(255,255,255,0.6)}
+  .exp-card{background:var(--navy-deep);border:1px solid rgba(255,255,255,0.1);padding:36px}
+  .exp-tag{font-family:var(--font-head);font-size:11.5px;font-weight:700;letter-spacing:0.1em;text-transform:uppercase;color:var(--amber);margin-bottom:10px}
+  .exp-title{font-family:var(--font-head);font-weight:700;font-size:23px;color:var(--white);margin-bottom:14px}
+  .exp-desc{font-size:15px;color:rgba(255,255,255,0.62);max-width:680px;line-height:1.75}
+
+  /* ABOUT */
+  .about{padding:80px 0;background:var(--paper)}
+  .about-inner{display:grid;grid-template-columns:1.15fr 0.85fr;gap:70px;align-items:center}
+  .about-img{background:var(--line);aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;color:var(--steel);font-family:var(--font-head);font-size:12px;letter-spacing:0.12em;text-transform:uppercase;gap:10px;text-align:center;padding:20px}
+  .about p{font-size:16px;color:var(--steel);line-height:1.8;max-width:560px}
+  .about p+p{margin-top:16px}
+
+  /* WHO WE WORK WITH */
+  .who-with{padding:80px 0;background:var(--white)}
+  .who-with-head{max-width:640px;margin-bottom:40px}
+  .qa-list{display:flex;flex-direction:column;gap:1px;background:var(--line);border:1px solid var(--line)}
+  .qa-row{background:var(--paper);padding:28px 30px;display:grid;grid-template-columns:280px 1fr;gap:24px;align-items:start}
+  .qa-question{font-family:var(--font-head);font-weight:700;font-size:15px;color:var(--navy);line-height:1.4}
+  .qa-answer{font-size:15.5px;color:var(--steel);line-height:1.65}
+
+  /* CTA */
+  .cta{padding:80px 0;background:var(--white);border-top:1px solid var(--line)}
+  .cta-inner{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center}
+  .cta .h2{margin-bottom:10px}
+  .cta p{font-size:16px;color:var(--steel);max-width:520px}
+
+  /* CONTACT */
+  .contact{padding:80px 0;background:var(--paper)}
+  .contact-inner{display:grid;grid-template-columns:0.9fr 1.1fr;gap:70px;align-items:start}
+  .c-item{padding:20px 0;border-bottom:1px solid var(--line)}
+  .c-item:first-of-type{border-top:1px solid var(--line)}
+  .c-label{font-family:var(--font-head);font-weight:700;font-size:11.5px;letter-spacing:0.12em;text-transform:uppercase;color:var(--amber-dark);margin-bottom:5px}
+  .c-value{font-size:16px;color:var(--navy);font-weight:500}
+  .c-value a{color:var(--navy);border-bottom:1px solid var(--amber)}
+  .c-note{font-size:13.5px;color:var(--steel);margin-top:3px}
+  .form-wrap{background:var(--white);border:1px solid var(--line);padding:40px}
+  .form-wrap h3{font-family:var(--font-head);font-weight:700;font-size:22px;color:var(--navy);margin-bottom:6px}
+  .form-wrap > p{font-size:14px;color:var(--steel);margin-bottom:26px}
+  .form-group{margin-bottom:18px}
+  .form-group label{display:block;font-family:var(--font-head);font-weight:700;font-size:11.5px;letter-spacing:0.1em;text-transform:uppercase;color:var(--navy);margin-bottom:7px}
+  .form-group input,.form-group select,.form-group textarea{width:100%;padding:12px 15px;border:1px solid var(--line);font-family:var(--font-body);font-size:15px;color:var(--ink);background:var(--white);outline:none}
+  .form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--amber)}
+  .form-group textarea{min-height:100px;resize:vertical}
+  .form-submit{width:100%;padding:15px;background:var(--navy);color:var(--white);border:none;font-family:var(--font-head);font-weight:700;font-size:14px;letter-spacing:0.06em;text-transform:uppercase;cursor:pointer;transition:background 0.2s}
+  .form-submit:hover{background:var(--navy-deep)}
+
+  /* FOOTER — matches original BReeZ Cycle Worx site colors, bridges back */
+  footer{background:var(--forest-deep);color:rgba(255,255,255,0.6);padding:56px 0 28px}
+  .footer-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:40px;margin-bottom:40px}
+  .footer-logo{display:flex;align-items:center;gap:10px;margin-bottom:16px}
+  .footer-logo-text{font-family:var(--font-head);font-weight:800;font-size:18px;color:white;line-height:1.1}
+  .footer-logo-text small{display:block;font-family:var(--font-body);font-size:9.5px;letter-spacing:0.18em;color:rgba(255,255,255,0.5)}
+  .footer-tagline{font-size:13px;line-height:1.6;max-width:280px;color:rgba(255,255,255,0.55)}
+  .footer-col h4{font-family:var(--font-body);font-size:11px;font-weight:700;letter-spacing:0.14em;text-transform:uppercase;color:rgba(255,255,255,0.4);margin-bottom:16px}
+  .footer-col ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .footer-col ul li a{font-size:13.5px;color:rgba(255,255,255,0.65)} .footer-col ul li a:hover{color:var(--rust)}
+  .footer-contact-item{display:flex;align-items:center;gap:10px;font-size:13.5px;margin-bottom:12px;color:rgba(255,255,255,0.65)}
+  .footer-social{width:32px;height:32px;border-radius:50%;border:1px solid rgba(255,255,255,0.3);display:flex;align-items:center;justify-content:center;margin-top:8px;font-size:13px}
+  .footer-bottom{border-top:1px solid rgba(255,255,255,0.1);padding-top:20px;font-size:12px;color:rgba(255,255,255,0.35);text-align:center}
+  @media(max-width:900px){.footer-grid{grid-template-columns:1fr;gap:32px}}
+
+  @media(max-width:960px){
+    .market-grid{grid-template-columns:1fr 1fr}
+    .capability-row{grid-template-columns:1fr;gap:8px}
+    .qa-row{grid-template-columns:1fr;gap:8px}
+    .about-inner,.contact-inner{grid-template-columns:1fr;gap:40px}
+    .about-img{aspect-ratio:16/9}
+    .cta-inner{grid-template-columns:1fr;gap:24px}
+    .hero,.markets,.capabilities,.experience,.about,.who-with,.cta,.contact{padding:60px 0}
+  }
+  @media(max-width:768px){
+    .nav-hamburger{display:flex}
+    .nav-links{display:none}
+    .nav-links.nav-open{
+      display:flex;
+      flex-direction:column;
+      position:absolute;
+      top:64px;
+      left:0;
+      right:0;
+      background:var(--navy);
+      padding:24px 32px;
+      gap:18px;
+      border-bottom:1px solid rgba(255,255,255,0.08);
+      z-index:99;
+    }
+    .form-wrap{padding:26px}
+  }
+  @media(max-width:600px){
+    .global-band-inner{flex-direction:column;gap:14px}
+    .global-band-item{border-right:none !important;padding:0 !important}
+     .hero-bg{background-position:center 30%;}
+  }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="container nav-inner">
+    <a href="index.html" class="logo" style="text-decoration:none">
+      <img src="images/logo1.png" alt="BReeZ Cycle Worx" class="logo-mark" style="height:32px;width:auto">
+      <div class="logo-text">BReeZ<small>CYCLE WORX</small></div>
+    </a>
+    <ul class="nav-links">
+      <li><a href="index.html">← Cycle Worx</a></li>
+      <li><a href="#markets">Markets</a></li>
+      <li><a href="#capabilities">Capabilities</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <div class="nav-hamburger" onclick="document.querySelector('.nav-links').classList.toggle('nav-open')"><span></span><span></span><span></span></div>
+  </div>
+</nav>
+
+<!-- HERO -->
+  <section class="hero" id="top">
+  <div class="hero-bg"></div>
+  <!-- IMAGE NEEDED: images/motorsports-hero.jpg (factory, vehicle, or field-work photo, 1920px wide landscape) -->
+  <div class="container hero-inner">
+    <p class="hero-kicker">BReeZ Motorsports Consulting</p>
+    <h1>Helping Specialty Vehicle Companies Enter and Grow in the U.S. Market.</h1>
+    <p>From factory floor to U.S. dealer network, BReeZ Motorsports Consulting helps EV, LSV, and specialty vehicle manufacturers connect product readiness, U.S. market requirements, distribution, dealer development, and aftersales execution.</p>
+    <!--<div class="hero-btns">
+      <a href="#" class="btn btn-amber">Discuss a U.S. Market Project</a>
+      <a href="#capabilities" class="btn btn-ghost">See Capabilities</a>
+    </div> -->
+  </div>
+</section>
+
+<!-- GLOBAL REACH BAND -->
+<section class="global-band" style="background:var(--navy-deep);padding:36px 0">
+  <div class="container global-band-inner" style="display:flex;justify-content:center;gap:0;flex-wrap:wrap">
+    <div class="global-band-item" style="flex:1;min-width:160px;text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,0.12)">
+      <div style="font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber)">North America</div>
+    </div>
+    <div class="global-band-item" style="flex:1;min-width:160px;text-align:center;padding:0 24px;border-right:1px solid rgba(255,255,255,0.12)">
+      <div style="font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber)">Europe</div>
+    </div>
+    <div class="global-band-item" style="flex:1;min-width:160px;text-align:center;padding:0 24px">
+      <div style="font-family:var(--font-head);font-weight:700;font-size:13px;letter-spacing:0.16em;text-transform:uppercase;color:var(--amber)">China</div>
+    </div>
+  </div>
+</section>
+
+<!-- MARKETS & VEHICLE PLATFORMS -->
+<section class="markets" id="markets">
+  <div class="container">
+    <div class="markets-head">
+      <p class="kicker">Markets &amp; Vehicle Platforms</p>
+      <h2 class="h2">Specialty Vehicle Categories</h2>
+      <p class="lede">Hands-on experience across the range of low-speed and specialty vehicle segments.</p>
+    </div>
+    <div class="market-grid">
+      <div class="market-card"><div class="market-name">Low-Speed Vehicles (LSV)</div></div>
+      <div class="market-card"><div class="market-name">Microcars &amp; Urban Mobility</div></div>
+      <div class="market-card"><div class="market-name">Golf Cars / PTVs</div></div>
+      <div class="market-card"><div class="market-name">Electric Specialty Vehicles</div></div>
+      <div class="market-card"><div class="market-name">Scooters &amp; Micromobility</div></div>
+      <div class="market-card"><div class="market-name">Specialty / Purpose-Built Vehicles</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- CAPABILITIES -->
+<section class="capabilities" id="capabilities">
+  <div class="container">
+    <div class="capabilities-head">
+      <p class="kicker">Consulting Capabilities</p>
+      <h2 class="h2">How the Pieces of a U.S. Launch Connect</h2>
+      <p class="lede">Four capability areas, working together — not a list of disconnected services.</p>
+    </div>
+
+    <div class="capability-list">
+      <div class="capability-row">
+        <div class="capability-num">01</div>
+        <div>
+          <div class="capability-title">U.S. Market Entry</div>
+          <div class="capability-items">Market assessment · launch strategy · U.S. market requirements · state considerations · product positioning</div>
+        </div>
+      </div>
+      <div class="capability-row">
+        <div class="capability-num">02</div>
+        <div>
+          <div class="capability-title">Product &amp; Operational Readiness</div>
+          <div class="capability-items">Product localization · vehicle validation · supplier/manufacturing coordination · field feedback · launch readiness</div>
+        </div>
+      </div>
+      <div class="capability-row">
+        <div class="capability-num">03</div>
+        <div>
+          <div class="capability-title">Distribution &amp; Dealer Development</div>
+          <div class="capability-items">Distributor strategy · dealer identification · onboarding · commercial structure · network development</div>
+        </div>
+      </div>
+      <div class="capability-row">
+        <div class="capability-num">04</div>
+        <div>
+          <div class="capability-title">Aftersales &amp; Technical Operations</div>
+          <div class="capability-items">Service systems · parts strategy · technical documentation · technician training · warranty and field support</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="capability-note">
+      <strong style="color:var(--navy)">U.S. Regulatory Readiness &amp; Coordination</strong> — Helping teams understand and coordinate U.S. market-entry requirements while working alongside appropriate engineering, testing, homologation, and legal specialists when required. Business development and strategic partnerships span all four capability areas above.
+    </div>
+  </div>
+</section>
+
+<!-- SELECTED EXPERIENCE -->
+<section class="experience" id="experience">
+  <div class="experience-bg"></div>
+  <div class="container" style="position:relative;z-index:1">
+    <div class="experience-head">
+      <p class="kicker">Selected Experience</p>
+      <h2 class="h2">Selected Experience</h2>
+    </div>
+
+    <div class="exp-card">
+      <div class="exp-tag">Electric Vehicles</div>
+      <div class="exp-title">ELI Electric Vehicles</div>
+      <p class="exp-desc">Supporting North American market development and operational readiness for an international electric vehicle manufacturer, including dealer and distributor development, product validation, aftersales systems, and coordination between U.S. market requirements and overseas engineering/manufacturing teams.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT JAMES -->
+<section class="about" id="about">
+  <div class="container about-inner">
+    <div>
+      <p class="kicker">About James</p>
+      <h2 class="h2">20+ Years Across Automotive &amp; Specialty Vehicles.</h2>
+      <p>James L. Seargent II brings more than 20 years of automotive and specialty vehicle experience spanning technical operations, sales, dealer development, product strategy, and market launch.</p>
+      <p>His career has included roles with Robert Bosch, Garia, and Eli Electric Vehicles, working across manufacturers, distributors, dealers, and suppliers in North America, Europe, and Asia.</p>
+      <p>Most recently based in Beijing, James worked directly with engineering, manufacturing, quality, and supplier teams supporting vehicle development and international market readiness. That experience provides a practical perspective across both sides of the business: what happens at the factory, and what must happen in the market for a vehicle program to succeed.</p>
+      <p>Through BReeZ Motorsports Consulting, his focus is helping international specialty vehicle manufacturers turn a promising product into an executable North American business.</p>
+      <div style="margin-top:28px">
+        <a href="#contact" class="btn btn-navy">Discuss a U.S. Market Project</a>
+      </div>
+    </div>
+   <div class="about-img" style="background-image:url('images/James-factory.jpg');background-size:cover;background-position:left center"></div>
+  </div>
+</section>
+
+<!-- WHO WE WORK WITH -->
+<section class="who-with">
+  <div class="container">
+    <div class="who-with-head">
+      <p class="kicker">Who I Work With</p>
+      <h2 class="h2">Is This a Fit?</h2>
+    </div>
+    <div class="qa-list">
+      <div class="qa-row">
+        <div class="qa-question">Who is this?</div>
+        <div class="qa-answer">A principal-led specialty vehicle consultancy led by James Seargent.</div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-question">What problem does it solve?</div>
+        <div class="qa-answer">Helping manufacturers bridge product development and practical U.S. market execution.</div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-question">Where is James strongest?</div>
+        <div class="qa-answer">U.S. market entry, dealer/distributor development, product readiness, and aftersales/technical operations.</div>
+      </div>
+      <div class="qa-row">
+        <div class="qa-question">Why James?</div>
+        <div class="qa-answer">20+ years across automotive and specialty vehicles, with experience connecting North America, Europe, and China.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta">
+  <div class="container cta-inner">
+    <div>
+      <h2 class="h2">Bringing a Specialty Vehicle to the U.S. Market?</h2>
+      <p>Whether you're planning a launch, building a dealer network, or need help navigating U.S. market requirements — let's talk about how to move it forward.</p>
+    </div>
+    <a href="#contact" class="btn btn-navy">Discuss a U.S. Market Project</a>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+  <div class="container contact-inner">
+    <div>
+      <p class="kicker">Contact</p>
+      <h2 class="h2">Let's Talk About Your Project.</h2>
+      <div class="c-item">
+        <div class="c-label">Email</div>
+        <div class="c-value"><a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
+      </div>
+      <div class="c-item">
+        <div class="c-label">Phone</div>
+        <div class="c-value"><a href="tel:9045741156">(904)-574-1156</a></div>
+        <div class="c-note">Call or text</div>
+
+      </div>
+      <div class="c-item">
+        <div class="c-label">LinkedIn</div>
+        <div class="c-value"><a href="https://www.linkedin.com/in/james-l-seargent-ii-86a360135/" target="_blank" rel="noopener noreferrer ">James L. Seargent II →</a></div>
+      </div>
+    </div>
+
+    <div class="form-wrap">
+      <h3>Discuss a U.S. Market Project</h3>
+      <p>Tell us about your project and we'll get back to you promptly.</p>
+      <form name="motorsports-consulting" method="POST" data-netlify="true" netlify-honeypot="bot-field">
+        <input type="hidden" name="form-name" value="motorsports-consulting" />
+        <p style="display:none"><label>Don't fill this out: <input name="bot-field" /></label></p>
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" required />
+        </div>
+        <div class="form-group">
+          <label for="company">Company</label>
+          <input type="text" id="company" name="company" placeholder="Company name" />
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="your@email.com" required />
+        </div>
+        <div class="form-group">
+          <label for="platform">Vehicle Platform</label>
+          <select id="platform" name="platform">
+            <option value="" disabled selected>Select a category</option>
+            <option>Low-Speed Vehicles (LSV)</option>
+            <option>Microcars &amp; Urban Mobility</option>
+            <option>Golf Cars / PTVs</option>
+            <option>Electric Specialty Vehicles</option>
+            <option>Scooters &amp; Micromobility</option>
+            <option>Specialty / Purpose-Built Vehicles</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="message">Tell Us About Your Project</label>
+          <textarea id="message" name="message" placeholder="What are you working on?"></textarea>
+        </div>
+        <button type="submit" class="form-submit">Discuss a U.S. Market Project</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <div class="footer-logo">
+          <img src="images/logo1.png" alt="BReeZ Cycle Worx" class="logo-mark" style="height:32px;width:auto">
+          <div class="footer-logo-text">BReeZ<small>CYCLE WORX</small></div>
+        </div>
+        <p class="footer-tagline">Building healthier communities through recreation, collaboration, and sustainable outdoor experiences. BReeZ Motorsports Consulting is a division of BReeZ Cycle Worx.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="community-development.html">Community Development</a></li>
+          <li><a href="projects.html">Projects</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer-col">
+        <h4>Connect</h4>
+        <div class="footer-contact-item">📞 <a href="tel:9045741156">(904)-574-1156</a></div>
+        <div class="footer-contact-item">✉️ <a href="mailto:info@breezcycleworx.com">info@breezcycleworx.com</a></div>
+        <div class="footer-contact-item">📍 Madisonville, Kentucky</div>
+        <a href="https://www.facebook.com/BReeZCycleWorx" target="_blank" rel="noopener" class="footer-social">f</a>
+      </div>
+    </div>
+    <div class="footer-bottom">&copy; 2025 BReeZ Cycle Worx. All rights reserved.</div>
+  </div>
+</footer>
+
+</body>
+</html>
